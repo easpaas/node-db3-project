@@ -5,7 +5,7 @@
 SELECT p.Id, p.ProductName, c.CategoryName as Category
 FROM Product as p
 JOIN Category as c
-  on p.CategoryId = c.id;
+  on p.CategoryId = c.id
 
 -- Display the order Id and shipper CompanyName for all orders placed before August 9 2012. Shows 429 records.
 
@@ -16,6 +16,13 @@ JOIN [Order] as o
 
 
 -- Display the name and quantity of the products ordered in order with Id 10251. Sort by ProductName. Shows 3 records.
+
+SELECT p.ProductName, p.UnitsOnOrder, o.Id
+FROM product as p 
+JOIN [Order] as o
+    on o.id = "10251"
+order by p.ProductName 
+limit 3
 
 -- Display the OrderID, Customer's Company Name and the employee's LastName for every order. All columns should be labeled clearly. Displays 16,789 records.
 
