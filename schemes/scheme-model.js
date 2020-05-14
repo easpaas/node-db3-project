@@ -24,7 +24,7 @@ function findSteps(id) {
 }
 
 function add(scheme) {
-
+  return db("schemes").insert(scheme, "id");
 }
 
 function addStep(stepData, id) {
