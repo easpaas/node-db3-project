@@ -20,7 +20,14 @@ function findById(id) {
 }
 
 function findSteps(id) {
+  // SELECT sc.scheme_name, st.step_number, st.instructions 
+// FROM steps as st
+// JOIN schemes as sc
+//     on st.scheme_id = sc.Id 
 
+return db("steps as st")
+  .join("schemes as sc", "st.scheme_id", "=", "sc.Id")
+  .select("sc.scheme_name", "st.step_number", "st.instructions")
 }
 
 function addStep(stepData, id) {
